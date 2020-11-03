@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html{
+
+box-sizing: border-box ;
+--cream: #f2eee3 ;
+--black: #1b1b1b ;
+--red: #d91729 ; 
+
+}
+
+html *,
+html *::before,
+html *::after {
+
+box-sizing: inherit ;
+
+}
+
+*::before,
+*::after{
+
+content: "" ;
+position: absolute ;
+
+}
+
+body{
+
+margin: 0 ;
+width: 100% ;
+height: 100vh ;
+display: flex;
+overflow: hidden ;
+position: relative ;
+align-items: center ;
+justify-content: center ;
+background-color: var(--cream) ;
+--beak-t: 115% 37% ;
+--beak-b: 115% 41.5% ;
+
+}
+
+
+
+
+.bird{
+
+width: 36em ;
+height: 36em ;
+position: relative ;
+
+}
+
+.bird *{
+
+position: absolute ;
+
+}
+
+
+.head{
+
+left: 20.1em ;
+top: 7.2em;
+height: 7em ;
+width: 7.7em ;
+border-radius: 86.2% 0 0 0;
+border-top: .15em solid var(--black) ;
+border-left: .15em solid var(--black) ;
+
+}
+
+.head::before{
+
+top: -62% ;
+left: 36.6% ;
+width: 9.5em ;
+height: 9.9em ;
+
+
+background-image: 
+
+
+/* eye=== */
+
+    radial-gradient(circle at 51% 52%, var(--black) 29% , var(--cream) 33% , var(--cream) 41%  , var(--red) 44% , var(--red) 53%, transparent 56% ) ,
+
+/* ===eye */
+
+
+/* beak-b=== */
+
+    linear-gradient(35deg, var(--red) 30% , transparent 31%) ,
+
+/* ===beak-b */
+
+
+/* beak-t=== */
+
+    linear-gradient(-35deg, transparent 70% , var(--red) 71%) ,
+
+/* ===beak-t */
+
+
+/* face=== */
+
+    linear-gradient(  var(--red) 100% , transparent 0),
+
+/* ===face */
+
+
+/* wattle=== */
+
+    radial-gradient( circle at 0% 50% , var(--red) 38% , transparent 40%) ,
+
+/* ===wattle */
+
+
+/* comb=== */
+
+    radial-gradient( 4.6em 4em at -9% 98% , var(--red) 70% , transparent 72%) ,
+
+/* ===comb */
+
+
+/* comb=== */
+
+    radial-gradient( 4.6em 4em at -9% 98% , var(--red) 70% , transparent 72%) ;
+
+/* ===comb */
+
+
+
+background-size: 
+
+
+/* eye=== */
+
+    3em 3em ,
+
+/* ===eye */
+
+
+/* beak-b=== */
+
+    3em 2em ,
+
+/* ===beak-b */
+
+
+/* beak-t=== */
+
+    3em 2em ,
+
+/* ===beak-t */
+
+
+/* face=== */
+
+    1.7em 2.4em ,
+
+/* ===face */
+
+
+/* wattle=== */
+
+    5em 6em ,
+
+/* ===wattle */
+
+
+/* comb=== */
+
+    5em 5em ,
+
+/* ===comb */
+
+
+/* comb=== */
+
+    5em 5em ;
+
+/* ===comb */
+
+
+
+
+background-position: 
+
+
+
+/* eye=== */
+
+    68% 37% ,
+
+/* ===eye */
+
+
+/* beak-b=== */
+
+    var(--beak-b) ,
+
+/* ===beak-b */
+
+
+/* beak-t=== */
+
+    var(--beak-t) ,
+
+/* ===beak-t */
+
+
+/* face=== */
+
+    74% 39% ,
+
+/* ===face */
+
+
+/* wattle=== */
+
+    131% 117% ,
+
+/* ===wattle */
+
+
+/* comb=== */
+
+    67% -42% ,
+
+/* ===comb */
+
+
+/* comb=== */
+
+    5% -42% ;
+
+/* ===comb */
+
+
+background-repeat: no-repeat;
+
+
+}
+
+.head::after{
+
+top: 184%;
+left: -158%;
+width: 15em;
+height: 16em;
+
+
+background-image: 
+
+
+/* leg-c=== */ 
+
+    radial-gradient(circle at 49% 52% , var(--black) 61% , transparent 64%) ,
+
+/* ===leg-c */ 
+
+
+/* leg-t=== */ 
+
+    linear-gradient(var(--black) 100% , transparent 0) ,
+
+/* ===leg-t */ 
+
+
+/* leg-b=== */ 
+
+    linear-gradient(var(--black) 100% , transparent 0) ,
+
+/* ===leg-b */ 
+
+
+/* wing-c=== */ 
+
+    radial-gradient(circle at 50% 50% , var(--black) 48% , transparent 54%) ,
+
+/* ===wing-c */
+
+
+/* wing-c=== */ 
+
+    radial-gradient(circle at 50% 50% , var(--black) 48% , transparent 54%) ,
+
+/* ===wing-c */
+
+
+/* wing-c=== */ 
+
+    radial-gradient(circle at 50% 50% , var(--black) 48% , transparent 54%) ,
+
+/* ===wing-c */
+
+
+/* wing-r=== */ 
+
+    radial-gradient(5.8em 5em at -4% 4% , transparent 46% , var(--black) 47% , var(--black) 48.5%, transparent 49.2%) ,
+
+/* ===wing-r */
+
+
+/* wing-r=== */ 
+
+    radial-gradient(10.7em 8em at -3% -29% , transparent 47% , var(--black) 48% , var(--black) 48.5%, transparent 49.2%) ,
+
+/* ===wing-r */
+
+
+/* wing-r=== */ 
+
+    radial-gradient(21.5em 15em at -6% -40% , transparent 47% , var(--black) 47.2% , var(--black) 47.6%, transparent 48%) ;
+
+/* ===wing-r */
+
+
+background-size:
+
+
+/* leg-c=== */ 
+
+    2.5em 2.5em ,
+
+/* ===leg-c */ 
+
+
+/* leg-t=== */ 
+
+    .1em 7.8em ,
+
+/* ===leg-t */ 
+
+
+/* leg-b=== */ 
+
+    3.5em .1em ,
+
+/* ===leg-b */
+
+
+/* wing-c=== */ 
+
+    1em 1em ,
+
+/* ===wing-c */
+
+
+/* wing-c=== */ 
+
+    1em 1em ,
+
+/* ===wing-c */
+
+
+/* wing-c=== */ 
+
+    1em 1em ,
+
+/* ===wing-c */
+
+
+/* wing-r=== */ 
+
+    5em 3em ,
+
+/* ===wing-r */
+
+
+/* wing-r=== */ 
+
+    5em 3em ,
+
+/* ===wing-r */
+
+
+/* wing-r=== */ 
+
+    13em 7em ;
+
+/* ===wing-r */
+
+
+background-position: 
+
+
+
+/* leg-c=== */ 
+
+84% 64% , 
+
+/* leg-c=== */
+
+
+/* leg-t=== */ 
+
+    79.1% 94% , 
+
+/* leg-t=== */ 
+
+
+/* leg-b=== */ 
+
+    92.1% 97% , 
+
+/* leg-b=== */ 
+
+
+/* wing-c=== */ 
+
+    2% 21% ,
+
+/* ===wing-c */
+
+
+/* wing-c=== */ 
+
+    2% 48% ,
+
+/* ===wing-c */
+
+
+/* wing-c=== */ 
+
+    2% 78% ,
+
+/* ===wing-c */
+
+
+/* wing-r=== */ 
+
+    9% 9% ,
+
+/* ===wing-r */
+
+
+/* wing-r=== */ 
+
+    11% 36% ,
+
+/* ===wing-r */
+
+
+/* wing-r=== */ 
+
+    38% 89% ;
+
+/* ===wing-r */
+
+
+background-repeat: no-repeat;
+
+
+}
+
+.body{
+
+top: 13.7em;
+left: 20.1em;
+width: 7.5em;
+height: 15em;
+border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+
+
+background-image: 
+
+linear-gradient(45deg ,var(--black) 25% , transparent 0% ) ,
+linear-gradient(45deg , transparent 75% , var(--black) 0% ) ,
+linear-gradient(45deg , var(--black) 25% , transparent 0% ) ,
+linear-gradient(45deg , transparent 75% , var(--black) 0% ) , 
+
+linear-gradient(45deg ,var(--black) 25% , transparent 0% ) ,
+linear-gradient(-45deg , transparent 75% , var(--black) 0% ) ,
+linear-gradient(-45deg , var(--black) 25% , transparent 0% ) ,
+linear-gradient(45deg , transparent 75% , var(--black) 0% ) ;
+
+background-size: 
+
+4.2em 4em , 
+4.2em 4em , 
+4.2em 4em , 
+4.2em 4em ,
+
+2em 2em ,
+2em 2em ,
+2em 2em ,
+2em 2em ;
+
+background-position: 
+
+0.8em -0.1em , 
+2.8em 1.9em , 
+-1.3em 1.9em , 
+0.7em 3.9em ,
+
+-4% 7% , 
+-4% 6.7% ,
+-3.4% 7.2% ,
+-3% 7% ;
+
+}
+
+
+.body::before{
+
+width: 13.7em;
+height: 7em;
+top: 49%;
+left: -112%;
+border-radius: 0 0 50% 50% / 0 0 100% 100% ;
+
+background-image: 
+
+repeating-radial-gradient( 9.3em 9.3em at center 1% ,var(--cream) , var(--cream) 8% , var(--black) 9% , var(--black) 18% , var(--cream) 19%) ;
+
+}
+
+
+.body::after{
+
+z-index: 2;
+top: 49.3%;
+left: -223%;
+height: 7em;
+width: 4.4em;
+
+background-repeat: no-repeat;
+background-position: 0 0% , 75% 0 ;
+border-radius: 0 0 100% 0 / 0 0 75% 0;
+background-size: 43% 100% , 84% 105% ;
+background-image: 
+
+repeating-linear-gradient(to top , var(--black) 0 , var(--black) 6% , var(--cream) 7% , var(--cream) 13.7% ) , 
+repeating-linear-gradient(to top , var(--black) 0 , var(--black) 5.5% , var(--cream) 6% , var(--cream) 12.7% ) ;
+
+}
+
+.dams{
+
+top: 5.8em;
+left: 11.8em;
+width: 7.7em;
+height: 15.4em;
+border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+
+background-image:
+
+repeating-linear-gradient( 33deg , var(--cream) 0 , var(--cream) 1% , transparent 1.2% , transparent 3% , var(--cream) 3.2% ) , 
+repeating-linear-gradient( 33deg , var(--cream) 0 , var(--cream) 1% , transparent 1.2% , transparent 3% , var(--cream) 3.2% ) , 
+repeating-linear-gradient( -32deg , var(--cream) 0 , var(--cream) 1% , transparent 1.2% , transparent 3% , var(--cream) 3.2% ) ,
+repeating-linear-gradient( -32deg , var(--cream) 0 , var(--cream) 1% , transparent 1.2% , transparent 3% , var(--cream) 3.2% ) ,
+repeating-linear-gradient( 33deg , var(--cream) 0 , var(--cream) 1% , transparent 1.2% , transparent 3% , var(--cream) 3.2% ) ;
+
+background-size: 
+
+2.1em 166% , 
+2.1em 166% , 
+2.2em 165% , 
+2.2em 165% , 
+2.1em 166% ;
+
+background-position: 
+
+49% 53.7% ,
+-27% 53.7% , 
+10.7% 45% ,
+88.7% 45% ,
+126.7% 45% ;
+
+background-repeat: no-repeat;
+
+
+
+background-color: var(--black);
+
+}
+
+.dams::before{
+
+width: 7.7em;
+height: 15.4em;
+border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+top: -3%;
+left: -84%;
+transform: rotate(-45deg);
+background-image: repeating-radial-gradient( 13em 13em at 0% 50% , var(--black) , var(--black) 5% , var(--cream) 6% , var(--cream) 6.5% , var(--black) 7% , var(--black) 7%);
+
+}
+
+.dams::after{
+
+width: 8.3em;
+height: 4.3em;
+border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+top: 72%;
+left: -109%;
+z-index: 1;
+background-image: repeating-radial-gradient( 6em 6em at 51% 100% , var(--black) , var(--black) 7% , var(--cream) 8% , var(--cream) 12% , var(--black) 12.8% );
+}
+
+@media screen and (max-width: 36em){
+
+.bird{
+
+    transform: scale(.8) translateX(-13%);
+    --beak-b: 114% 42% ;
+    --beak-t: 114% 37% ;
+
+}
+
+.dams{
+
+    background-position: 
+      
+    50% 53.7% ,
+    -25.8% 53.1% , 
+    11.7% 45% ,
+    87.7% 45% ,
+    124.6% 45.3%
+    
+}
+
+}
+    </style>
+</head>
+<body>  
+        <div class="bird">
+                <div class="head"></div>
+                <div class="body"></div>
+                <div class="dams">
+                </div>
+            </div>
+    
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>body{
+        background:yellow;
+      }
+      .eyes{
+        
+        height:150px;
+        width:150px;
+        background:black;
+        border-radius:75%;
+      }
+      .eball{
+        height:50px;
+        width:50px;
+        background:white;
+        border-radius:100%;
+        position:relative;
+        top:25px;
+        right:-80px;
+      }
+      .eballr{
+        height:50px;
+        width:50px;
+        background:white;
+        border-radius:100%;
+        position:relative;
+        top:25px;
+        left:20px;
+      }
+      .upper{
+        margin-top:100px;
+        margin-bottom:100px;
+        display:flex;
+        justify-content:space-around;
+      }
+      .cheeks{
+        height:250px;
+        width:250px;
+        background:red;
+        border-radius:250px;
+      }
+      .lower{
+        display:flex;
+        justify-content:space-between;
+      }
+      .nose{
+        height:15px;
+        width:50px;
+        background:black;
+        border-radius:100%;
+        position:absolute;
+        top:50%;
+        left:50%;
+        margin-left:-25px;
+      }
+      .mouth{
+        height:50px;
+        width:200px;
+        background:transparent;
+        position:absolute;
+        top:75%;
+        left:50%;
+        margin-left:-100px;
+        border:0px black solid;
+        overflow:hidden;
+        display:flex;
+        border-radius:10px;
+      }
+      .curve1{
+        height:100px;
+        width:200px;
+        border-radius:100%;
+        border:5px solid black;
+        position:relative;
+        bottom:60px;
+      }
+      /*.curve1{
+        width: 500px; 
+        height: 100px;  
+        border: solid 5px #000;
+        border-color: #000 #000 transparent #000;
+        border-radius: 50%/100px 100px 0 0;
+      }*/</style>
+</head>
+<body>
+    <div class="upper">
+        <div class="eyes"><div class="eball"></div></div>
+      <div class="eyes"><div class="eballr"></div></div>
+      </div>
+      <div class="lower">
+        <div class="cheeks"></div>
+        <div class="cheeks"></div>
+      </div>
+      <div class="nose"></div>
+        <div class="mouth"><div class="curve1"></div><div class="curve1"></div></div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>*,
+        *::before,
+        *::after {
+          box-sizing: border-box;
+        }
+        
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+          background-color: #e8e8e8;
+        }
+        
+        .container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+        }
+        
+        .stage {
+          width: 100%;
+          height: 400px;
+          /* background-color: lightcoral; */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+        }
+        
+        .sunSet {
+          width: 200px;
+          height: 100px;
+          border-radius: 200px 200px 0px 0px;
+          /* background-color: aqua; */
+          border: 3px solid black;
+          border-bottom: none;
+          position: absolute;
+          left: 25%;
+          top: 24%;
+        }
+        
+        .horizon {
+          width: 75%;
+          border: 2px solid black;
+        }
+        
+        .text {
+          position: absolute;
+          font-size: 10px;
+          top: 40%;
+          left: 60%;
+        }
+        
+        .reflection {
+          position: absolute;
+          left: 25%;
+          bottom: 24%;
+          z-index: 99;
+          width: 200px;
+          height: 100px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        
+          border-radius: 0px 0px 200px 200px;
+          overflow: hidden;
+        }
+        
+        .r1 {
+          width: 100%;
+          border: 2px solid black;
+          margin: 5px;
+        }
+        
+        @media only screen and (max-width: 600px) {
+          .text {
+            font-size: 10px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+        </style>
+</head>
+<body>
+    <div class="container">
+        <div class="stage">
+          <div class="sunSet"></div>
+          <div class="horizon"></div>
+          <div class="reflection">
+            <div class="r1"></div>
+            <div class="r1"></div>
+            <div class="r1"></div>
+            <div class="r1"></div>
+            <div class="r1"></div>
+            <div class="r1"></div>
+            <div class="r1"></div>
+            <div class="r1"></div>
+          </div>
+          <div class="text">Silence...</div>
+        </div>
+      </div>
+    
+</body>
+</html>

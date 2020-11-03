@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>body {
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(130deg, #ffb3ff 30%, #e6ccff);
+      }
+      div {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        top: 5vh;
+        height: 500px;
+        width: 500px;
+      }
+      #container {
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+        animation-name: bounce;
+        animation-timing-function: ease-in;
+      }
+      
+      #stem {
+        width: 15px;
+        height: 350px;
+        top: 140px;
+        background: linear-gradient(to right, #f4f4f4 60%, grey 98%, black);
+        border-radius: 6px;
+      }
+      
+      #pop {
+        position: absolute;
+        background-color: rgba(35, 155, 86, 0.9);
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        z-index: 2;
+        box-shadow: 5px 0px 12px 0px rgba(0, 0, 0, 0.2);
+      }
+      #cross {
+        position: absolute;
+        top: 50px;
+        left: -5px;
+        width: 160px;
+        height: 50px;
+        border-radius: 5px;
+        background-color: rgba(35, 155, 86, 0.9);
+        z-index: 6;
+      }
+      #cross-overlay {
+        position: absolute;
+        top: 0;
+        background: linear-gradient(to right, #f4f4f4 40%, grey 99.99%, black);
+        opacity: 0.22;
+        border-radius: 5px;
+        width: 160px;
+        height: 50px;
+        z-index: 5;
+        box-shadow: 0px 1px 5px black;
+      }
+      #pop-overlay {
+        position: absolute;
+        top: 0;
+        background: linear-gradient(to right, #f4f4f4 35%, grey 99.99%, black);
+        opacity: 0.2;
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        z-index: 4;
+      }
+      #pop-shadow-r {
+        left: 8px;
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        background-color: rgba(35, 155, 86, 0.7);
+      }
+      #cross-shadow-r {
+        top: 0px;
+        left: 1px;
+        height: 50px;
+        width: 160px;
+        border-radius: 5px;
+        background-color: rgba(35, 155, 86, 0.7);
+      }
+      #pop-shadow-l {
+        left: -7px;
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        background-color: rgba(40, 180, 99, 1);
+      }
+      #cross-shadow-l {
+        top: 0px;
+        left: -3px;
+        height: 50px;
+        width: 160px;
+        border-radius: 5px;
+        background-color: rgba(40, 180, 99, 0.5);
+      }
+      
+      #stem-shadow {
+        position: absolute;
+        width: 15px;
+        height: 350px;
+        top: 0px;
+        left: 2px;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: -1;
+        border-radius: 6px;
+      }
+      #pop-sheen {
+        z-index: 7;
+        top: 35px;
+        left: -68px;
+        width: 80px;
+        height: 120px;
+        border-radius: 50%;
+        background: white;
+        transform: rotate(20deg);
+        opacity: 0.03;
+        box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+      }
+       
+      @keyframes bounce {
+          0%   { transform:translateY(-50px); }
+          50%  { transform:translateY(0); }
+          55%  { transform:translateY(-5px);}
+          100% { transform:translateY(0); }
+       }
+      </style>
+</head>
+<body>
+    <div>
+      <div id="container">
+        <div id="pop">
+          <div id="cross">
+            <div id="cross-shadow-l"></div>
+            <div id="cross-shadow-r"></div>
+            <div id="cross-overlay"></div>
+          </div>
+          <div id="pop-overlay">
+          </div>
+        </div>
+        <div id ="pop-sheen"></div>
+        <div id="pop-shadow-r"></div>
+        
+        <div id="pop-shadow-l"></div>
+        
+        <div id="stem">
+          <div id="stem-shadow"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

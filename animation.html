@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>html, body { height: 100%; }
+
+        html { background: linear-gradient(#000005, #050520); }
+        
+        canvas {
+          display: block;
+        }
+        
+        #light {
+          background: radial-gradient(30% 60%, circle contain, hsla(240, 100%, 20%, .25) 0%, hsla(240, 0%, 0%, 0) 100%);
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+        }
+        
+        #ground {
+          background: linear-gradient(#101020, #001);
+          bottom: 0;
+          height: 30%;
+          left: 0;
+          position: absolute;
+          width: 100%;
+        }
+        
+        #moon {
+          background: linear-gradient(#99a, #eef);
+          border-radius: 100%;
+          box-shadow: 0 0 150px hsla(0, 0%, 100%, .3);
+          top: 60%;
+          height: 200px;
+          left: 30%;
+          margin: -100px 0 0 -100px;
+          position: absolute;
+          width: 200px;
+        }
+        
+        #house {
+          background: #000;
+          bottom: 30%;
+          height: 18px;
+          left: 30%;
+          margin: 0 0 0 -15px;
+          position: absolute;
+          width: 30px;
+        }
+        
+        #house:before {
+          background: #000;
+          top: -15px;
+          content: '';
+          display: block;
+          height: 12px;
+          left: 21px;
+          margin: 0 0 0 0;
+          position: absolute;
+          width: 6px;
+          z-index: 2;
+        }
+        
+        #house:after {
+          border-bottom: 15px solid #000;
+          border-right: 20px solid transparent;
+          border-left: 20px solid transparent;
+          top: -15px;
+          content: '';
+          display: block;
+          height: 0;
+          left: 50%;
+          margin: 0 0 0 -20px;
+            position: absolute;
+          width: 0;
+        }
+        
+        </style>
+        <script>window.requestAnimFrame=function(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(a){window.setTimeout(a,1E3/60)}}();
+
+            var c = document.getElementById('c');
+            var ctx = c.getContext('2d');
+            var cw = c.width = window.innerWidth;
+            var ch = c.height = window.innerHeight*.7;
+            var rand = function(a,b){return ~~((Math.random()*(b-a+1))+a);}
+                
+            updateAll = function(a){
+              var i = a.length;
+              while(i--){
+                a[i].update(i);  
+              }
+            }
+                  
+            renderAll = function(a){
+              var i = a.length;
+              while(i--){
+                a[i].render(i);  
+              }
+            }
+            
+            var stars = [];
+            
+            Star = function(x, y, radius, speed){
+              this.x = x;
+              this.y = y;
+              this.speed = (speed/25);
+              this.radius = radius;
+              this.saturation = (20+(this.radius)*5);
+              this.lightness = (8+this.radius*4);
+            }
+              
+            Star.prototype = {
+              update: function(i){
+                this.x += this.speed;
+                if(this.x - this.radius >= cw){
+                  this.x = rand(0, ch-this.radius)
+                  this.x = -this.radius;
+                }
+            },
+            render: function(){
+              ctx.beginPath();
+              ctx.arc(this.x, this.y, (this.radius < 0) ? 0 : this.radius, 0, Math.PI *2, false);
+              var flickerAdd = (rand(0, 140) === 0) ? rand(5, 20) : 0;
+              ctx.fillStyle = 'hsl(240, '+this.saturation+'%, '+(this.lightness+flickerAdd)+'%)';
+              ctx.fill();
+              }
+            }
+                
+            makeStarfield = function(){
+              var base = .75;
+              var inc = .2;
+              var count = 40;
+              var per = 6;
+              while(count--){
+                var radius = base + inc;
+                var perTime = per;
+                while(perTime--){
+                    radius += inc;
+                    stars.push(new Star(rand(0, cw-radius), rand(0, ch-radius), radius, radius*3));
+                }
+              }
+            }
+            
+            var loop = function(){
+              window.requestAnimFrame(loop);
+              updateAll(stars);
+              ctx.clearRect(0, 0, cw, ch);  
+              renderAll(stars);
+            }
+                
+            makeStarfield();      
+            loop();</script>
+</head>
+<body>
+    <canvas id="c"></canvas>
+<div id="light"></div>
+<div id="moon"></div>
+<div id="ground"></div>
+<div id="house"></div>
+</body>
+</html>
